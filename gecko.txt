@@ -1,10 +1,10 @@
- bla intro
+bla intro
 
- $First gecko
- asfasdfsfdsfdf
+$First gecko
+asfasdfsfdsfdf
 
- clipboard = pyperclip.paste()
- 12351134
+$Second gecko
+tryagainyay
 
- $Third gecko
- 1h6as84hf
+$Third gecko
+1h6as84hf

@@ -1,15 +1,15 @@
 import pyperclip
 
+# Open the file and read its contents
 with open("gecko.txt", "r+") as f:
     contents = f.read()
-    start_index = contents.find("$Second gecko")
-    if start_index == -1:
-        print("Second gecko not found in file")
-    end_index = contents.find('\n', start_index)
-    if end_index == -1:
-        end_index = len(contents)
+    lines = contents.splitlines()
     clipboard = pyperclip.paste()
-    new_contents = contents[:start_index] + clipboard + contents[end_index:]
+    for i, line in enumerate(lines):
+        if "$Second gecko" in line:
+            lines[i+1] = clipboard
+            break
+    new_contents = '\n'.join(lines)
     f.seek(0)
     f.write(new_contents)
     f.truncate()
